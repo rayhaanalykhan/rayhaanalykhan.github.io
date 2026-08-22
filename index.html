@@ -161,7 +161,7 @@
   }
 
   /* ---------- Sections ---------- */
-  section{padding:clamp(3.4rem,7vw,5.5rem) 0;}
+  section{padding:clamp(2.2rem,4.5vw,3.2rem) 0;}
   .divider{border-top:1px solid var(--border);}
   .reveal{opacity:0; transform:translateY(12px); transition:opacity .55s ease, transform .55s ease;}
   .reveal.in{opacity:1; transform:translateY(0);}
@@ -216,7 +216,7 @@
 
   /* ---------- Stat strip ---------- */
   .stats{
-    display:flex; flex-wrap:wrap; margin-top:clamp(2.6rem,5vw,3.6rem);
+    display:flex; flex-wrap:wrap; margin-top:clamp(1.8rem,3.5vw,2.4rem);
     border-top:1px solid var(--border); border-bottom:1px solid var(--border);
   }
   .stat{
@@ -230,7 +230,7 @@
   /* ---------- Experience ---------- */
   .job{
     display:grid; grid-template-columns:180px 1fr; gap:.4rem 2.2rem;
-    padding:2rem 0; border-top:1px solid var(--border);
+    padding:1.5rem 0; border-top:1px solid var(--border);
   }
   .job:last-child{}
   @media (max-width:680px){.job{grid-template-columns:1fr; gap:.3rem;}}
@@ -251,6 +251,7 @@
     transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
   .proj-card:hover{border-color:var(--accent); transform:translateY(-2px); box-shadow:var(--shadow);}
+  .proj-icon{width:48px; height:48px; border-radius:11px; margin-bottom:1rem; display:block;}
   .proj-name{font-family:var(--display); font-weight:700; font-size:1.08rem; color:var(--ink); margin:0 0 .6rem 0;}
   .proj-desc{font-size:.92rem; color:var(--ink-dim); line-height:1.6; margin:0 0 1.2rem 0; flex:1;}
   .proj-link{font-size:.85rem; font-weight:600; color:var(--accent); text-decoration:none; display:inline-flex; align-items:center; gap:.35rem;}
@@ -325,14 +326,14 @@
   <section id="hero" class="hero reveal">
     <div class="hero-grid">
       <div>
-        <div class="avail-badge"><span class="avail-dot"></span>Open to remote opportunities</div>
+        <div class="avail-badge"><span class="avail-dot"></span>Open to remote work &amp; relocation, worldwide</div>
         <h1 class="hero-name">Rehan Ali Khan</h1>
         <p class="hero-role">Senior iOS Developer — Mobile Team Lead</p>
         <p class="lead">
           I design and lead the build of native iOS apps that hold up at scale. Five years in, I'm now
           <strong>Mobile Team Lead at Techelix</strong>, running a team of four across three apps on the
           Spark Membership platform, and leading the ground-up rebuild of our flagship member app on
-          <strong>Swift&nbsp;6</strong> with Clean Architecture and CI/CD-driven white-label builds. Based in Karachi, Pakistan, and open to remote roles with international teams.
+          <strong>Swift&nbsp;6</strong> with Clean Architecture and CI/CD-driven white-label builds. Currently based in Karachi, Pakistan — open to remote roles with international teams, and open to relocating for the right opportunity.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="assets/Rehan-Ali-Khan-iOS-Developer-CV.pdf" download>↓ Download CV</a>
@@ -442,16 +443,19 @@
     <h2 class="section-title">Projects</h2>
     <div class="proj-grid">
       <div class="proj-card">
+        <img class="proj-icon" src="assets/sparktan-icon.jpg" alt="" loading="lazy">
         <h3 class="proj-name">Sparktan App</h3>
         <p class="proj-desc">Your gym or studio in your pocket. Check in on classes, see what's coming up, handle payments, and stay on top of your business, no desk required.</p>
         <a class="proj-link" href="https://apps.apple.com/pk/app/sparktan/id1495766933" target="_blank" rel="noopener">View on App Store →</a>
       </div>
       <div class="proj-card">
+        <img class="proj-icon" src="assets/spark-kiosk-icon.jpg" alt="" loading="lazy">
         <h3 class="proj-name">Spark Kiosk App</h3>
         <p class="proj-desc">Tablet check-in for studios and gyms. Quick, simple, no phones needed. Just tap and go.</p>
         <a class="proj-link" href="https://apps.apple.com/pk/app/spark-kiosk/id1448107942" target="_blank" rel="noopener">View on App Store →</a>
       </div>
       <div class="proj-card">
+        <img class="proj-icon" src="assets/spark-member-icon.jpg" alt="" loading="lazy">
         <h3 class="proj-name">Spark Member App</h3>
         <p class="proj-desc">Check in, track your progress, buy from the shop, and stay in the loop with what's happening at your studio. Works across 150+ gyms, martial arts schools, and dance studios.</p>
         <a class="proj-link" href="https://apps.apple.com/pk/app/spark-member/id1453013929" target="_blank" rel="noopener">View on App Store →</a>
@@ -499,7 +503,7 @@
   <section id="contact" class="reveal divider">
     <div class="contact-box">
       <h2 class="contact-heading">Let's build something reliable.</h2>
-      <p class="contact-sub">Based in Karachi, Pakistan — open to remote roles with teams anywhere in the world, and conversations about iOS engineering, team leadership, and mobile architecture.</p>
+      <p class="contact-sub">Currently based in Karachi, Pakistan — open to remote roles with teams anywhere in the world, and open to relocating for the right opportunity. Let's talk about iOS engineering, team leadership, and mobile architecture.</p>
       <div class="cta-row">
         <a class="btn primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rayhaanalykhan@gmail.com" target="_blank" rel="noopener">Email me</a>
         <a class="btn" href="https://www.linkedin.com/in/rayhaanalykhan/" target="_blank" rel="noopener">LinkedIn</a>
