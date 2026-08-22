@@ -5,26 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rehan Ali Khan — Senior iOS Developer</title>
 <meta name="description" content="Rehan Ali Khan — Senior iOS Developer &amp; Mobile Team Lead. Swift, UIKit, SwiftUI, Clean Architecture. Building and shipping native iOS apps at scale.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FA7343'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='34' font-weight='700' fill='%2317171C' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A2C4B'/%3E%3Crect x='6' y='6' width='52' height='52' rx='8' fill='none' stroke='%23F2F7FC' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' fill='%23F2F7FC' text-anchor='middle'%3ERK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#17171c;
-    --panel:#1e1f26;
-    --panel-2:#22232b;
-    --line:#2c2d37;
-    --text:#dcdee6;
-    --text-dim:#9a9dae;
-    --muted:#6d7184;
-    --swift:#fa7343;
-    --swift-dim:#c95f37;
-    --keyword:#fc5fa3;
-    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --maxw: 920px;
-    --gutter-w: 3.2rem;
+    --bg:#F7FAFD;
+    --bg-panel:#ECF2F8;
+    --line:rgba(10,44,75,0.16);
+    --line-strong:rgba(10,44,75,0.4);
+    --ink:#0A2C4B;
+    --ink-dim:#3C6690;
+    --ink-mute:#7699BE;
+    --accent:#E14A26;
+    --accent-ink:#FFF6F1;
+    --display:'Space Grotesk', ui-sans-serif, sans-serif;
+    --body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --maxw:1040px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0A2C4B;
+      --bg-panel:#0F3660;
+      --line:rgba(255,255,255,0.14);
+      --line-strong:rgba(255,255,255,0.36);
+      --ink:#F2F7FC;
+      --ink-dim:#B7CFE6;
+      --ink-mute:#6D91B4;
+      --accent:#FF6A3D;
+      --accent-ink:#1A0900;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A2C4B;
+    --bg-panel:#0F3660;
+    --line:rgba(255,255,255,0.14);
+    --line-strong:rgba(255,255,255,0.36);
+    --ink:#F2F7FC;
+    --ink-dim:#B7CFE6;
+    --ink-mute:#6D91B4;
+    --accent:#FF6A3D;
+    --accent-ink:#1A0900;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#F7FAFD;
+    --bg-panel:#ECF2F8;
+    --line:rgba(10,44,75,0.16);
+    --line-strong:rgba(10,44,75,0.4);
+    --ink:#0A2C4B;
+    --ink-dim:#3C6690;
+    --ink-mute:#7699BE;
+    --accent:#E14A26;
+    --accent-ink:#FFF6F1;
+    color-scheme: light;
   }
 
   *{box-sizing:border-box;}
@@ -36,517 +74,626 @@
 
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--text);
-    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
     font-size:16px;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
+    transition:background-color .35s ease, color .35s ease;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:34px 34px;
+    background-position:-1px -1px;
   }
 
-  ::selection{background:rgba(250,115,67,0.28); color:#fff;}
+  ::selection{background:rgba(225,74,38,0.28); color:var(--ink);}
 
   a{color:inherit;}
-  a:focus-visible, button:focus-visible, .navlink:focus-visible{
-    outline:2px solid var(--swift);
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
     outline-offset:3px;
-    border-radius:3px;
+    border-radius:2px;
   }
 
-  code, .mono{font-family:var(--mono);}
+  .mono{font-family:var(--mono);}
 
-  /* ---------- Titlebar ---------- */
-  .titlebar{
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(1.2rem, 4vw, 2.4rem);}
+
+  /* ---------- Topbar ---------- */
+  .topbar{
     position:sticky; top:0; z-index:40;
-    display:flex; align-items:center; gap:1rem;
-    height:44px;
-    padding:0 1rem;
-    background:var(--panel);
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .dots{display:flex; gap:6px; flex-shrink:0;}
-  .dots span{width:10px; height:10px; border-radius:50%; display:block;}
-  .dots span:nth-child(1){background:#ff6259;}
-  .dots span:nth-child(2){background:#ffbd2e;}
-  .dots span:nth-child(3){background:#28c93f;}
-  .filetab{
-    font-family:var(--mono); font-size:0.78rem; color:var(--text-dim);
-    display:flex; align-items:center; gap:.45rem;
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  .topbar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:0 clamp(1.2rem, 4vw, 2.4rem);
+    display:flex; align-items:center; gap:1.6rem; height:56px;
   }
-  .filetab .dot-unsaved{width:6px;height:6px;border-radius:50%;background:var(--swift); flex-shrink:0;}
-  .titlebar-status{
-    margin-left:auto; display:flex; align-items:center; gap:.4rem;
-    font-family:var(--mono); font-size:0.72rem; color:var(--text-dim);
-    white-space:nowrap;
+  .mark{
+    width:30px; height:30px; flex-shrink:0;
+    border:1.5px solid var(--line-strong); border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-weight:700; font-size:0.7rem; letter-spacing:.02em;
+    color:var(--ink);
   }
-  .pulse{
-    width:7px; height:7px; border-radius:50%; background:#28c93f; flex-shrink:0;
-    box-shadow:0 0 0 0 rgba(40,201,63,0.6);
-    animation:pulse 2.2s ease-out infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(40,201,63,0.5);}
-    70%{box-shadow:0 0 0 6px rgba(40,201,63,0);}
-    100%{box-shadow:0 0 0 0 rgba(40,201,63,0);}
-  }
-  .navtoggle{
-    display:none;
-    background:none; border:1px solid var(--line); color:var(--text-dim);
-    font-family:var(--mono); font-size:0.72rem; border-radius:5px;
-    padding:.3rem .55rem; cursor:pointer;
-  }
-
-  /* ---------- Shell layout ---------- */
-  .shell{display:flex; align-items:flex-start;}
-
-  .sidebar{
-    position:sticky; top:44px;
-    width:196px; flex-shrink:0;
-    height:calc(100vh - 44px);
-    border-right:1px solid var(--line);
-    padding:1.6rem 0 1.6rem 0;
-    background:var(--panel);
-  }
-  .sidebar-label{
-    font-family:var(--mono); font-size:0.68rem; letter-spacing:.08em;
-    color:var(--muted); text-transform:uppercase;
-    padding:0 1.3rem; margin-bottom:.7rem;
-  }
-  .navlink{
-    display:flex; align-items:center; gap:.55rem;
-    font-family:var(--mono); font-size:0.82rem; color:var(--text-dim);
-    text-decoration:none; padding:.42rem 1.3rem;
-    border-left:2px solid transparent;
-    transition:color .15s ease, border-color .15s ease, background .15s ease;
-  }
-  .navlink .ext{color:var(--muted);}
-  .navlink:hover{color:var(--text); background:rgba(255,255,255,0.02);}
-  .navlink.active{color:var(--swift); border-left-color:var(--swift); background:rgba(250,115,67,0.06);}
-
-  .main{
+  .sheets{
+    display:flex; gap:0; overflow-x:auto; scrollbar-width:none;
     flex:1; min-width:0;
-    max-width:calc(var(--maxw) + var(--gutter-w));
-    padding:0 0 4rem 0;
   }
+  .sheets::-webkit-scrollbar{display:none;}
+  .sheet-tab{
+    font-family:var(--mono); font-size:0.72rem; letter-spacing:.03em;
+    color:var(--ink-mute); text-decoration:none; white-space:nowrap;
+    padding:.5rem .85rem; border-bottom:2px solid transparent;
+    display:flex; gap:.4rem; align-items:baseline;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .sheet-tab .idx{color:var(--ink-mute); opacity:.7;}
+  .sheet-tab:hover{color:var(--ink);}
+  .sheet-tab.active{color:var(--accent); border-color:var(--accent);}
 
-  section{
-    padding:3.4rem clamp(1.3rem, 4vw, 2.6rem);
-    border-bottom:1px solid var(--line);
+  .theme-toggle{
+    flex-shrink:0; display:flex; align-items:center; gap:0;
+    border:1.5px solid var(--line-strong); border-radius:20px;
+    padding:3px; background:var(--bg-panel); cursor:pointer;
+    position:relative; width:56px; height:30px;
   }
+  .theme-toggle svg{width:15px; height:15px; position:relative; z-index:1; flex:1;}
+  .theme-toggle .sun{color:var(--ink-mute);}
+  .theme-toggle .moon{color:var(--ink-mute);}
+  .theme-toggle .knob{
+    position:absolute; top:3px; left:3px; width:22px; height:22px;
+    border-radius:50%; background:var(--accent);
+    transition:transform .25s cubic-bezier(.4,0,.2,1);
+  }
+  :root[data-theme="dark"] .theme-toggle .knob,
+  :root:not([data-theme="light"]) .theme-toggle .knob{transform:translateX(0);}
+  :root[data-theme="light"] .theme-toggle .knob{transform:translateX(26px);}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .knob{transform:translateX(0);}
+  }
+  .theme-toggle[data-mode="dark"] .knob{transform:translateX(0) !important;}
+  .theme-toggle[data-mode="light"] .knob{transform:translateX(26px) !important;}
+  .theme-toggle[data-mode="dark"] .moon{color:var(--accent-ink);}
+  .theme-toggle[data-mode="light"] .sun{color:var(--accent-ink);}
+
+  /* ---------- Sections ---------- */
+  section{padding:clamp(3rem,7vw,5rem) 0; border-bottom:1px solid var(--line);}
   section:last-of-type{border-bottom:none;}
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
 
-  .comment-label{
-    font-family:var(--mono); font-size:0.78rem; color:var(--muted);
-    margin:0 0 1.6rem 0; display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap;
+  .sheet-label{
+    font-family:var(--mono); font-size:0.76rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-mute); margin:0 0 2.2rem 0;
+    display:flex; align-items:center; gap:.7rem;
   }
-  .comment-label .slashes{color:#4f5265;}
-  .comment-label .sub{color:var(--text-dim); font-size:0.74rem;}
+  .sheet-label .num{color:var(--accent); font-weight:600;}
+  .sheet-label .rule{flex:1; height:1px; background:var(--line);}
 
-  /* ---------- Hero ---------- */
-  .hero{padding-top:3.6rem;}
-  .doc-comment{font-family:var(--mono); margin:0 0 1.6rem 0;}
-  .doc-comment .line{
-    display:flex; gap:.9rem; align-items:baseline;
-    white-space:pre-wrap;
+  /* ---------- Hero / title block ---------- */
+  .hero{padding-top:clamp(2.4rem,6vw,3.6rem);}
+  .titleblock-meta{
+    font-family:var(--mono); font-size:0.72rem; color:var(--ink-mute);
+    display:flex; flex-wrap:wrap; gap:0;
+    border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    margin-bottom:2rem; width:fit-content; max-width:100%;
   }
-  .doc-comment .slashes{color:#4f5265; flex-shrink:0; user-select:none;}
-  .doc-comment .l1{font-size:clamp(1.9rem, 5.4vw, 3.1rem); font-weight:700; color:var(--text); letter-spacing:-.01em;}
-  .doc-comment .l2{font-size:clamp(1.05rem, 2.6vw, 1.3rem); font-weight:500; color:var(--swift);}
-  .doc-comment .l3{font-size:0.95rem; color:var(--text-dim);}
-  .typecursor{
-    display:inline-block; width:.55ch; background:var(--swift);
-    animation:blink 1s step-end infinite; margin-left:2px;
+  .titleblock-meta span{
+    padding:.45rem .8rem; border-right:1px solid var(--line); white-space:nowrap;
   }
-  @keyframes blink{50%{opacity:0;}}
+  .titleblock-meta span:last-child{border-right:none;}
+  .titleblock-meta b{color:var(--ink); font-weight:600;}
+
+  .hero-name{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(2.3rem, 6.4vw, 4.2rem); line-height:1.02;
+    letter-spacing:-.01em; margin:0 0 .5rem 0; color:var(--ink);
+    text-transform:uppercase;
+  }
+  .hero-role{
+    font-family:var(--mono); font-size:clamp(.95rem,2vw,1.15rem);
+    color:var(--accent); margin:0 0 1.6rem 0; letter-spacing:.01em;
+  }
+
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,5vw,3.5rem);
+    align-items:start; margin-top:1rem;
+  }
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;}}
 
   .lead{
-    max-width:62ch; color:var(--text-dim); font-size:1.05rem; line-height:1.75;
-    margin:0 0 2rem 0;
+    color:var(--ink-dim); font-size:1.04rem; line-height:1.8; margin:0 0 2rem 0; max-width:56ch;
   }
-  .lead strong{color:var(--text); font-weight:600;}
+  .lead strong{color:var(--ink); font-weight:600;}
 
-  .cta-row{display:flex; flex-wrap:wrap; gap:.7rem; margin-bottom:2.6rem;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:.7rem;}
   .btn{
-    font-family:var(--mono); font-size:0.83rem;
-    padding:.62rem 1.05rem; border-radius:6px;
+    font-family:var(--mono); font-size:0.8rem;
+    padding:.6rem 1rem; border-radius:3px;
     text-decoration:none; display:inline-flex; align-items:center; gap:.5rem;
-    border:1px solid var(--line); color:var(--text);
-    transition:border-color .15s ease, transform .12s ease, background .15s ease;
+    border:1.5px solid var(--line-strong); color:var(--ink);
+    transition:border-color .15s ease, background .15s ease, transform .12s ease;
+    letter-spacing:.01em;
   }
-  .btn:hover{border-color:var(--swift); transform:translateY(-1px);}
-  .btn.primary{background:var(--swift); color:#1a1206; border-color:var(--swift); font-weight:600;}
-  .btn.primary:hover{background:#ff8156;}
+  .btn:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:600;}
+  .btn.primary:hover{opacity:.9;}
 
-  .statusbar{
-    display:flex; flex-wrap:wrap; gap:0; font-family:var(--mono); font-size:0.76rem;
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-    background:var(--panel-2);
+  /* Portrait plate */
+  .portrait-plate{
+    border:1.5px solid var(--line-strong); border-radius:4px; padding:.6rem;
+    background:var(--bg-panel); width:100%; max-width:230px;
   }
-  .statusbar .stat{
-    padding:.75rem 1.1rem; border-right:1px solid var(--line);
-    color:var(--text-dim); display:flex; gap:.5rem; align-items:baseline;
+  .portrait-frame{
+    aspect-ratio:4/5; border:1px dashed var(--line-strong); border-radius:2px;
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    background:var(--bg); position:relative;
   }
-  .statusbar .stat b{color:var(--text); font-size:0.85rem;}
+  .portrait-frame::before, .portrait-frame::after,
+  .portrait-frame .corner-a, .portrait-frame .corner-b{
+    content:""; position:absolute; width:10px; height:10px; pointer-events:none;
+  }
+  .portrait-frame::before{top:5px; left:5px; border-top:1.5px solid var(--accent); border-left:1.5px solid var(--accent);}
+  .portrait-frame::after{top:5px; right:5px; border-top:1.5px solid var(--accent); border-right:1.5px solid var(--accent);}
+  .portrait-frame .corner-a{bottom:5px; left:5px; border-bottom:1.5px solid var(--accent); border-left:1.5px solid var(--accent);}
+  .portrait-frame .corner-b{bottom:5px; right:5px; border-bottom:1.5px solid var(--accent); border-right:1.5px solid var(--accent);}
+  .portrait-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+  .portrait-frame .placeholder{color:var(--ink-mute); width:34%; height:34%;}
+  .portrait-caption{
+    font-family:var(--mono); font-size:0.68rem; color:var(--ink-mute);
+    text-transform:uppercase; letter-spacing:.06em; margin-top:.55rem; text-align:center;
+  }
 
-  /* ---------- Experience / git log ---------- */
-  .commit{
-    display:grid; grid-template-columns:22px 1fr; gap:0 1rem;
-    position:relative;
+  /* ---------- Blueprint figure (annotated portrait) ---------- */
+  .blueprint-figure{
+    display:grid;
+    grid-template-columns:150px 1fr 210px;
+    grid-template-areas:"top top top" "left svg right";
+    align-items:center; gap:1.4rem 0;
+    margin-top:2.4rem;
   }
-  .commit .graph{
-    display:flex; flex-direction:column; align-items:center;
-    position:relative;
+  @media (max-width:760px){
+    .blueprint-figure{grid-template-columns:1fr; grid-template-areas:"svg" "top" "left" "right"; gap:1rem;}
   }
-  .commit .node{
-    width:11px; height:11px; border-radius:50%;
-    background:var(--panel); border:2px solid var(--swift);
-    margin-top:6px; flex-shrink:0; z-index:1;
+  .bp-svg-wrap{grid-area:svg; display:flex; justify-content:center;}
+
+  .dim-callout{font-family:var(--mono);}
+  .dim-value{display:block; font-size:1.15rem; font-weight:600; color:var(--ink);}
+  .dim-unit{font-size:.92rem; color:var(--ink-dim); font-weight:600;}
+  .dim-note{display:block; font-size:.68rem; color:var(--ink-mute); text-transform:uppercase; letter-spacing:.04em; margin-top:.15rem;}
+
+  .dim-top{grid-area:top; text-align:center;}
+  .dim-left{grid-area:left; text-align:right; padding-right:.5rem;}
+  .dim-right{grid-area:right; display:flex; flex-direction:column; gap:1.5rem; padding-left:.5rem;}
+  @media (max-width:760px){
+    .dim-top, .dim-left, .dim-right{text-align:left; padding:0;}
+    .dim-right{flex-direction:column; gap:1rem; margin-top:.6rem;}
+    .dim-left{margin-top:.6rem;}
   }
-  .commit .stem{
-    width:2px; flex:1; background:var(--line); margin-top:2px;
+
+  /* ---------- Revisions (experience) ---------- */
+  .rev-table-head{
+    display:grid; grid-template-columns:64px 168px 1fr; gap:0 1.2rem;
+    font-family:var(--mono); font-size:0.68rem; color:var(--ink-mute);
+    text-transform:uppercase; letter-spacing:.06em;
+    padding-bottom:.7rem; border-bottom:1px solid var(--line); margin-bottom:0;
   }
-  .commit:last-child .stem{display:none;}
-  .commit-body{padding-bottom:2.3rem;}
-  .commit-head{
-    display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem; margin-bottom:.15rem;
+  @media (max-width:640px){.rev-table-head{display:none;}}
+
+  .rev-row{
+    display:grid; grid-template-columns:64px 168px 1fr; gap:.3rem 1.2rem;
+    padding:1.7rem 0; border-bottom:1px solid var(--line);
   }
-  .commit-hash{font-family:var(--mono); font-size:0.78rem; color:var(--keyword);}
-  .commit-date{
-    margin-left:auto; font-family:var(--mono); font-size:0.74rem; color:var(--muted);
-    white-space:nowrap;
+  .rev-row:last-child{border-bottom:none;}
+  @media (max-width:640px){
+    .rev-row{grid-template-columns:1fr; gap:.4rem;}
   }
-  .commit-msg{font-weight:600; color:var(--text); font-size:1.02rem;}
-  .commit-meta{font-family:var(--mono); font-size:0.78rem; color:var(--text-dim); margin-bottom:.85rem;}
-  .diff{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.45rem;}
-  .diff li{
-    font-size:0.94rem; color:var(--text-dim); line-height:1.6;
+
+  .rev-marker{display:flex; flex-direction:column; align-items:center;}
+  .rev-tri{
+    width:0; height:0;
+    border-left:8px solid transparent; border-right:8px solid transparent;
+    border-bottom:13px solid var(--accent);
+    flex-shrink:0;
+  }
+  .rev-letter{
+    font-family:var(--mono); font-size:.66rem; color:var(--ink-mute); margin-top:.35rem;
+  }
+  @media (max-width:640px){
+    .rev-marker{flex-direction:row; gap:.5rem; margin-bottom:.2rem;}
+  }
+
+  .rev-period{font-family:var(--mono); font-size:.8rem; color:var(--ink-dim); white-space:nowrap;}
+
+  .rev-role{font-family:var(--display); font-weight:600; font-size:1.12rem; color:var(--ink); margin:0 0 .1rem 0;}
+  .rev-company{font-family:var(--mono); font-size:.8rem; color:var(--ink-mute); margin-bottom:.9rem;}
+  .rev-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.55rem;}
+  .rev-list li{
+    font-size:.96rem; color:var(--ink-dim); line-height:1.65;
     display:flex; gap:.6rem;
   }
-  .diff li .plus{color:var(--swift); font-family:var(--mono); flex-shrink:0;}
-
-  /* ---------- Skills / Package.swift ---------- */
-  .pkg-groups{display:grid; grid-template-columns:1fr; gap:1.4rem;}
-  @media (min-width:640px){.pkg-groups{grid-template-columns:1fr 1fr;}}
-  .pkg-group-key{
-    font-family:var(--mono); font-size:0.78rem; color:var(--text-dim); margin-bottom:.55rem;
-  }
-  .pkg-group-key .k{color:var(--keyword);}
-  .pills{display:flex; flex-wrap:wrap; gap:.45rem;}
-  .pill{
-    font-family:var(--mono); font-size:0.78rem; color:var(--text);
-    background:var(--panel-2); border:1px solid var(--line); border-radius:5px;
-    padding:.3rem .6rem;
+  .rev-list li::before{
+    content:"";
+    width:0; height:0; flex-shrink:0; margin-top:.5rem;
+    border-left:5px solid var(--accent); border-top:3.5px solid transparent; border-bottom:3.5px solid transparent;
   }
 
-  /* ---------- Education strip ---------- */
-  .edu-grid{display:grid; grid-template-columns:1fr; gap:1.6rem;}
-  @media (min-width:640px){.edu-grid{grid-template-columns:1.3fr 1fr;}}
-  .edu-item .k{font-family:var(--mono); font-size:0.74rem; color:var(--muted); margin-bottom:.3rem;}
-  .edu-item .v{font-size:0.98rem; color:var(--text);}
-  .edu-item .v .dim{color:var(--text-dim); font-size:0.88rem;}
-
-  /* ---------- Contact / footer ---------- */
-  .contact-heading{
-    font-size:clamp(1.5rem, 3.6vw, 2.1rem); font-weight:700; color:var(--text);
-    max-width:20ch; margin:0 0 .8rem 0; letter-spacing:-.01em;
+  /* ---------- Specification (skills) ---------- */
+  .spec-groups{display:grid; grid-template-columns:1fr; gap:0;}
+  .spec-row{
+    display:grid; grid-template-columns:200px 1fr; gap:.6rem 1.4rem;
+    padding:1.1rem 0; border-bottom:1px solid var(--line);
+    align-items:baseline;
   }
-  .contact-sub{color:var(--text-dim); max-width:52ch; margin:0 0 1.8rem 0;}
+  .spec-row:first-child{border-top:1px solid var(--line);}
+  @media (max-width:640px){.spec-row{grid-template-columns:1fr; gap:.5rem;}}
+  .spec-key{
+    font-family:var(--mono); font-size:.74rem; color:var(--ink-mute);
+    text-transform:uppercase; letter-spacing:.05em;
+  }
+  .spec-key .idx{color:var(--accent); margin-right:.4rem;}
+  .spec-vals{display:flex; flex-wrap:wrap; gap:.5rem;}
+  .tag{
+    font-family:var(--mono); font-size:.78rem; color:var(--ink);
+    border:1px solid var(--line-strong); border-radius:3px;
+    padding:.28rem .6rem;
+  }
+
+  /* ---------- Notes (education) ---------- */
+  .notes-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem;}
+  @media (max-width:760px){.notes-grid{grid-template-columns:1fr;}}
+  .note-card{border:1px solid var(--line); border-radius:4px; padding:1.3rem 1.4rem;}
+  .note-num{font-family:var(--mono); font-size:.7rem; color:var(--accent); margin-bottom:.6rem;}
+  .note-title{font-family:var(--mono); font-size:.7rem; color:var(--ink-mute); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.5rem;}
+  .note-body{font-size:.96rem; color:var(--ink); line-height:1.55;}
+  .note-body .dim{color:var(--ink-dim); font-size:.86rem;}
+
+  /* ---------- Approval / contact ---------- */
+  .approval-grid{display:grid; grid-template-columns:1fr auto; gap:2.5rem; align-items:center;}
+  @media (max-width:760px){.approval-grid{grid-template-columns:1fr;}}
+  .approval-heading{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(1.6rem,4vw,2.5rem); color:var(--ink); max-width:18ch;
+    margin:0 0 .9rem 0; letter-spacing:-.01em;
+  }
+  .approval-sub{color:var(--ink-dim); max-width:48ch; margin:0 0 1.8rem 0;}
+
+  .stamp{
+    width:150px; height:150px; flex-shrink:0; position:relative;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-9deg);
+  }
+  .stamp svg{width:100%; height:100%;}
+  .stamp-ring{fill:none; stroke:var(--accent); stroke-width:2.5;}
+  .stamp-ring-inner{fill:none; stroke:var(--accent); stroke-width:1;}
+  .stamp-text{font-family:var(--mono); font-size:9.6px; font-weight:700; fill:var(--accent); letter-spacing:2px;}
+  .stamp-center{font-family:var(--display); font-size:20px; font-weight:700; fill:var(--accent); text-anchor:middle;}
+  @media (max-width:760px){.stamp{margin:0 auto;}}
+
   footer{
-    padding:1.6rem clamp(1.3rem, 4vw, 2.6rem) 2.4rem;
+    padding:1.8rem clamp(1.2rem,4vw,2.4rem) 2.6rem;
+    max-width:var(--maxw); margin:0 auto;
     display:flex; flex-wrap:wrap; gap:.6rem 1.2rem; align-items:center;
-    font-family:var(--mono); font-size:0.74rem; color:var(--muted);
+    font-family:var(--mono); font-size:.72rem; color:var(--ink-mute);
   }
-  footer a{text-decoration:none; color:var(--text-dim); border-bottom:1px dotted var(--line);}
-  footer a:hover{color:var(--swift); border-color:var(--swift);}
+  footer a{text-decoration:none; color:var(--ink-dim); border-bottom:1px dotted var(--line-strong);}
+  footer a:hover{color:var(--accent); border-color:var(--accent);}
   footer .spacer{flex:1;}
-
-  /* ---------- Mobile ---------- */
-  @media (max-width:860px){
-    .sidebar{
-      position:fixed; top:44px; left:0; right:0; height:auto;
-      transform:translateY(-6px); opacity:0; pointer-events:none;
-      max-height:calc(100vh - 44px); overflow-y:auto;
-      transition:opacity .15s ease, transform .15s ease;
-      box-shadow:0 12px 24px rgba(0,0,0,0.35);
-    }
-    .sidebar.open{transform:translateY(0); opacity:1; pointer-events:auto;}
-    .navtoggle{display:inline-flex; align-items:center; gap:.4rem;}
-    .main{max-width:100%;}
-  }
 </style>
 </head>
 <body>
 
-<div class="titlebar">
-  <div class="dots"><span></span><span></span><span></span></div>
-  <div class="filetab"><span class="dot-unsaved" aria-hidden="true"></span>RehanAliKhan.swift</div>
-  <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="sidebar">// nav</button>
-  <div class="titlebar-status"><span class="pulse" aria-hidden="true"></span>build passing</div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="mark" aria-hidden="true">RK</div>
+    <nav class="sheets" aria-label="Section navigation">
+      <a class="sheet-tab" data-target="overview" href="#overview"><span class="idx">01</span>Overview</a>
+      <a class="sheet-tab" data-target="revisions" href="#revisions"><span class="idx">02</span>Revisions</a>
+      <a class="sheet-tab" data-target="specification" href="#specification"><span class="idx">03</span>Specification</a>
+      <a class="sheet-tab" data-target="notes" href="#notes"><span class="idx">04</span>Notes</a>
+      <a class="sheet-tab" data-target="approval" href="#approval"><span class="idx">05</span>Approval</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <div class="knob" aria-hidden="true"></div>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </div>
 </div>
 
-<div class="shell">
-  <nav class="sidebar" id="sidebar" aria-label="Section navigation">
-    <div class="sidebar-label">Navigator</div>
-    <a class="navlink" data-target="about" href="#about">About<span class="ext">.swift</span></a>
-    <a class="navlink" data-target="experience" href="#experience">Experience<span class="ext">.log</span></a>
-    <a class="navlink" data-target="skills" href="#skills">Package<span class="ext">.swift</span></a>
-    <a class="navlink" data-target="education" href="#education">Profile<span class="ext">.json</span></a>
-    <a class="navlink" data-target="contact" href="#contact">Contact<span class="ext">.md</span></a>
-  </nav>
+<main class="wrap">
 
-  <main class="main">
-
-    <section id="about" class="hero">
-      <p class="doc-comment">
-        <span class="line"><span class="slashes">///</span><span class="l1" id="typeName"></span></span>
-        <span class="line"><span class="slashes">///</span><span class="l2" id="typeTitle"></span></span>
-        <span class="line"><span class="slashes">///</span><span class="l3" id="typeLoc"></span></span>
-      </p>
-
-      <p class="lead">
-        I design and lead the build of native iOS apps that hold up at scale. Five years in, I'm now
-        <strong>Mobile Team Lead at Techelix</strong>, running a team of four across three apps on the
-        Spark Membership platform — <strong>100K+ users</strong> across <strong>150+ white-label
-        deployments</strong> — and leading the ground-up rebuild of our flagship member app on
-        <strong>Swift&nbsp;6</strong> with Clean Architecture and CI/CD-driven white-label builds.
-      </p>
-
-      <div class="cta-row">
-        <a class="btn primary" href="assets/Rehan-Ali-Khan-iOS-Developer-CV.pdf" download>↓ Download CV</a>
-        <a class="btn" href="mailto:rayhaanalykhan@gmail.com">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/rayhaanalykhan/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://stackoverflow.com/users/10124991/rehan-ali-khan" target="_blank" rel="noopener">Stack Overflow</a>
-        <a class="btn" href="https://github.com/rayhaanalykhan" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </section>
-
-    <div class="statusbar">
-      <div class="stat"><b>5+</b> yrs iOS</div>
-      <div class="stat"><b>4</b> engineers led</div>
-      <div class="stat"><b>100K+</b> users in prod</div>
-      <div class="stat"><b>150+</b> white‑label builds</div>
-      <div class="stat"><b>Swift 6</b> current stack</div>
+  <section id="overview" class="hero reveal">
+    <div class="titleblock-meta mono">
+      <span>DRAWN BY <b>R. A. KHAN</b></span>
+      <span>SCALE <b>NTS</b></span>
+      <span>SHEET <b>01 / 05</b></span>
+      <span>REV <b>F</b></span>
+      <span>PROJECT <b>SPARK MEMBERSHIP PLATFORM</b></span>
     </div>
 
-    <section id="experience">
-      <p class="comment-label"><span class="slashes">//</span> Experience.log <span class="sub">$ git log --oneline --graph</span></p>
+    <h1 class="hero-name">Rehan Ali Khan</h1>
+    <p class="hero-role">// Senior iOS Developer — Mobile Team Lead — Karachi, Pakistan</p>
 
-      <div class="commits">
-        <div class="commit">
-          <div class="graph"><div class="node"></div><div class="stem"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">a3f9c1e</span>
-              <span class="commit-date">Jul 2025 → Present</span>
-            </div>
-            <div class="commit-msg">Senior iOS Developer / Team Lead — Mobile Apps</div>
-            <div class="commit-meta">Techelix · Karachi, Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Leading the ground-up rebuild of the Spark Member app on Swift 6 with Clean Architecture and MVVM, migrating from a legacy MVC codebase and per-client Xcode targets to a single target with CI/CD-driven white-label builds.</li>
-              <li><span class="plus">+</span>Lead a team of 2 iOS and 2 Android developers across three apps on the Spark Membership platform, supporting 100K+ iOS users across 150+ white-label deployments.</li>
-              <li><span class="plus">+</span>Own sprint planning, Jira ticket management, task assignment, and biweekly cross-team code/PR reviews.</li>
-              <li><span class="plus">+</span>Drive iOS CI/CD with Fastlane; oversee white-label deployment for 140+ clients; manage App Store submissions and support cases.</li>
-              <li><span class="plus">+</span>Introducing unit test coverage across the codebase and adopting Claude Code / custom Claude Skills to automate parts of the build and release workflow.</li>
-              <li><span class="plus">+</span>Adapting to React Native as the company extends select products to a cross-platform stack.</li>
-            </ul>
-          </div>
-        </div>
+    <p class="lead">
+      I design and lead the build of native iOS apps that hold up at scale. Five years in, I'm now
+      <strong>Mobile Team Lead at Techelix</strong>, running a team of four across three apps on the
+      Spark Membership platform, and leading the ground-up rebuild of our flagship member app on
+      <strong>Swift&nbsp;6</strong> with Clean Architecture and CI/CD-driven white-label builds.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="assets/Rehan-Ali-Khan-iOS-Developer-CV.pdf" download>↓ Download CV</a>
+      <a class="btn" href="mailto:rayhaanalykhan@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/rayhaanalykhan/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://stackoverflow.com/users/10124991/rehan-ali-khan" target="_blank" rel="noopener">Stack Overflow</a>
+      <a class="btn" href="https://github.com/rayhaanalykhan" target="_blank" rel="noopener">GitHub</a>
+    </div>
 
-        <div class="commit">
-          <div class="graph"><div class="node"></div><div class="stem"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">7d2b5a8</span>
-              <span class="commit-date">Aug 2024 → Jul 2025</span>
-            </div>
-            <div class="commit-msg">iOS Developer</div>
-            <div class="commit-meta">Techelix · Karachi, Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Developed and maintained native iOS features for the Spark Membership platform using Swift and UIKit.</li>
-              <li><span class="plus">+</span>Led the initial development and release of the Sparktan/Owner App; implemented Amplitude Analytics for product usage insights.</li>
-              <li><span class="plus">+</span>Managed App Store submissions and support cases for white-label client apps, including developer account issues and store-removal notices.</li>
-            </ul>
-          </div>
-        </div>
+    <div class="blueprint-figure">
+      <div class="dim-callout dim-top">
+        <span class="dim-value">5+ <span class="dim-unit">yrs</span></span>
+        <span class="dim-note">Shipping native iOS</span>
+      </div>
 
-        <div class="commit">
-          <div class="graph"><div class="node"></div><div class="stem"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">e94c0f6</span>
-              <span class="commit-date">Nov 2022 → Aug 2024</span>
-            </div>
-            <div class="commit-msg">Senior Executive — iOS Developer</div>
-            <div class="commit-meta">Logicose · Karachi, Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Integrated PayPal payment processing and real-time communication using SwiftSignalRClient.</li>
-              <li><span class="plus">+</span>Implemented voice/video calling functionality using OpenTok and CallKit.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="dim-callout dim-left">
+        <span class="dim-value">100K+</span>
+        <span class="dim-note">Users in production</span>
+      </div>
 
-        <div class="commit">
-          <div class="graph"><div class="node"></div><div class="stem"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">5b1a7d3</span>
-              <span class="commit-date">Aug 2022 → Oct 2022</span>
-            </div>
-            <div class="commit-msg">iOS Developer</div>
-            <div class="commit-meta">Logicose · Karachi, Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Supported iOS feature development and bug fixes under senior engineering supervision.</li>
-            </ul>
+      <div class="bp-svg-wrap">
+        <div class="portrait-plate">
+          <div class="portrait-frame">
+            <img src="assets/portrait.jpg" alt="Portrait of Rehan Ali Khan" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <svg class="placeholder" style="display:flex;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
+            </svg>
+            <span class="corner-a" aria-hidden="true"></span><span class="corner-b" aria-hidden="true"></span>
           </div>
-        </div>
-
-        <div class="commit">
-          <div class="graph"><div class="node"></div><div class="stem"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">c08e2f4</span>
-              <span class="commit-date">Aug 2021 → Jul 2022</span>
-            </div>
-            <div class="commit-msg">iOS Developer</div>
-            <div class="commit-meta">TeamX Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Worked as a stand-alone iOS developer, maintaining and developing new native iOS applications.</li>
-              <li><span class="plus">+</span>Implemented Apple In-App Purchase, Stripe payments, app localization, and social logins.</li>
-              <li><span class="plus">+</span>Integrated Firebase for OTP verification and push notifications.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="commit">
-          <div class="graph"><div class="node"></div></div>
-          <div class="commit-body">
-            <div class="commit-head">
-              <span class="commit-hash">91d4a7b</span>
-              <span class="commit-date">May 2021 → Aug 2021</span>
-            </div>
-            <div class="commit-msg">iOS Developer</div>
-            <div class="commit-meta">TCS Private Limited · Karachi, Pakistan</div>
-            <ul class="diff">
-              <li><span class="plus">+</span>Learned core iOS development fundamentals — AutoLayout, delegate and observer patterns, SQLite3, JSON modeling, model parsing, and CocoaPods — under senior supervision.</li>
-            </ul>
-          </div>
+          <div class="portrait-caption">Fig. 01 — Subject</div>
         </div>
       </div>
-    </section>
 
-    <section id="skills">
-      <p class="comment-label"><span class="slashes">//</span> Package.swift <span class="sub">dependencies</span></p>
-
-      <div class="pkg-groups">
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.languages</span> = [</div>
-          <div class="pills"><span class="pill">Swift</span><span class="pill">UIKit</span><span class="pill">SwiftUI</span><span class="pill">TypeScript</span><span class="pill">Objective-C</span></div>
+      <div class="dim-right">
+        <div class="dim-callout">
+          <span class="dim-value">150+</span>
+          <span class="dim-note">White-label deployments</span>
         </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.architecture</span> = [</div>
-          <div class="pills"><span class="pill">MVC</span><span class="pill">MVVM</span><span class="pill">Clean Architecture</span><span class="pill">SOLID</span><span class="pill">Delegate / Observer</span></div>
+        <div class="dim-callout">
+          <span class="dim-value">Swift 6</span>
+          <span class="dim-note">Current stack · Clean Architecture</span>
         </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.networking</span> = [</div>
-          <div class="pills"><span class="pill">RESTful APIs</span><span class="pill">Moya</span><span class="pill">Alamofire</span><span class="pill">JSON Modeling</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.payments</span> = [</div>
-          <div class="pills"><span class="pill">Stripe</span><span class="pill">PayPal</span><span class="pill">Apple In-App Purchase</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.realtime</span> = [</div>
-          <div class="pills"><span class="pill">SignalR</span><span class="pill">OpenTok</span><span class="pill">CallKit</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.dataAndStorage</span> = [</div>
-          <div class="pills"><span class="pill">SQLite3</span><span class="pill">Core Data</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.testing</span> = [</div>
-          <div class="pills"><span class="pill">XCTest</span><span class="pill">Unit Testing</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.ciAndRelease</span> = [</div>
-          <div class="pills"><span class="pill">Fastlane</span><span class="pill">GitHub Actions</span><span class="pill">GitHub</span><span class="pill">White-label Automation</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.aiAssisted</span> = [</div>
-          <div class="pills"><span class="pill">Claude Code</span><span class="pill">Claude Skills</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.toolsAndPlatforms</span> = [</div>
-          <div class="pills"><span class="pill">SPM</span><span class="pill">CocoaPods</span><span class="pill">Firebase</span><span class="pill">Amplitude</span><span class="pill">App Store Connect</span><span class="pill">Jira</span><span class="pill">Social Logins</span><span class="pill">Localization</span></div>
-        </div>
-        <div class="pkg-group">
-          <div class="pkg-group-key"><span class="k">.practices</span> = [</div>
-          <div class="pills"><span class="pill">Sprint Planning</span><span class="pill">Retrospectives</span><span class="pill">Code / PR Reviews</span></div>
+        <div class="dim-callout">
+          <span class="dim-value">4</span>
+          <span class="dim-note">Engineers led</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="education">
-      <p class="comment-label"><span class="slashes">//</span> Profile.json</p>
-      <div class="edu-grid">
-        <div class="edu-item">
-          <div class="k">education</div>
-          <div class="v">BS, Computational Science<br><span class="dim">Bahria University · Aug 2015 – Jun 2019</span></div>
-        </div>
-        <div class="edu-item">
-          <div class="k">languages</div>
-          <div class="v">Urdu <span class="dim">(native)</span> · English <span class="dim">(working)</span> · German <span class="dim">(A1, elementary)</span></div>
-        </div>
-        <div class="edu-item">
-          <div class="k">certifications</div>
-          <div class="v">Deutsch Kurs A1 <span class="dim">(German Language, A1 Level)</span></div>
+  <section id="revisions" class="reveal">
+    <p class="sheet-label"><span class="num">02</span> Revision History<span class="rule"></span></p>
+
+    <div class="rev-table-head">
+      <span>Rev</span><span>Period</span><span>Description</span>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV F</span></div>
+      <div class="rev-period">Jul 2025 → Present</div>
+      <div>
+        <h3 class="rev-role">Senior iOS Developer / Team Lead — Mobile Apps</h3>
+        <div class="rev-company">Techelix · Karachi, Pakistan</div>
+        <ul class="rev-list">
+          <li>Leading the ground-up rebuild of the Spark Member app on Swift 6 with Clean Architecture and MVVM, migrating from a legacy MVC codebase and per-client Xcode targets to a single target with CI/CD-driven white-label builds.</li>
+          <li>Lead a team of 2 iOS and 2 Android developers across three apps on the Spark Membership platform, supporting 100K+ iOS users across 150+ white-label deployments.</li>
+          <li>Own sprint planning, Jira ticket management, task assignment, and biweekly cross-team code/PR reviews.</li>
+          <li>Drive iOS CI/CD with Fastlane; oversee white-label deployment for 140+ clients; manage App Store submissions and support cases.</li>
+          <li>Introducing unit test coverage across the codebase and adopting Claude Code / custom Claude Skills to automate parts of the build and release workflow.</li>
+          <li>Adapting to React Native as the company extends select products to a cross-platform stack.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV E</span></div>
+      <div class="rev-period">Aug 2024 → Jul 2025</div>
+      <div>
+        <h3 class="rev-role">iOS Developer</h3>
+        <div class="rev-company">Techelix · Karachi, Pakistan</div>
+        <ul class="rev-list">
+          <li>Developed and maintained native iOS features for the Spark Membership platform using Swift and UIKit.</li>
+          <li>Led the initial development and release of the Sparktan/Owner App; implemented Amplitude Analytics for product usage insights.</li>
+          <li>Managed App Store submissions and support cases for white-label client apps, including developer account issues and store-removal notices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV D</span></div>
+      <div class="rev-period">Nov 2022 → Aug 2024</div>
+      <div>
+        <h3 class="rev-role">Senior Executive — iOS Developer</h3>
+        <div class="rev-company">Logicose · Karachi, Pakistan</div>
+        <ul class="rev-list">
+          <li>Integrated PayPal payment processing and real-time communication using SwiftSignalRClient.</li>
+          <li>Implemented voice/video calling functionality using OpenTok and CallKit.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV C</span></div>
+      <div class="rev-period">Aug 2022 → Oct 2022</div>
+      <div>
+        <h3 class="rev-role">iOS Developer</h3>
+        <div class="rev-company">Logicose · Karachi, Pakistan</div>
+        <ul class="rev-list">
+          <li>Supported iOS feature development and bug fixes under senior engineering supervision.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV B</span></div>
+      <div class="rev-period">Aug 2021 → Jul 2022</div>
+      <div>
+        <h3 class="rev-role">iOS Developer</h3>
+        <div class="rev-company">TeamX Pakistan</div>
+        <ul class="rev-list">
+          <li>Worked as a stand-alone iOS developer, maintaining and developing new native iOS applications.</li>
+          <li>Implemented Apple In-App Purchase, Stripe payments, app localization, and social logins.</li>
+          <li>Integrated Firebase for OTP verification and push notifications.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rev-row">
+      <div class="rev-marker"><div class="rev-tri"></div><span class="rev-letter">REV A</span></div>
+      <div class="rev-period">May 2021 → Aug 2021</div>
+      <div>
+        <h3 class="rev-role">iOS Developer</h3>
+        <div class="rev-company">TCS Private Limited · Karachi, Pakistan</div>
+        <ul class="rev-list">
+          <li>Learned core iOS development fundamentals — AutoLayout, delegate and observer patterns, SQLite3, JSON modeling, model parsing, and CocoaPods — under senior supervision.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="specification" class="reveal">
+    <p class="sheet-label"><span class="num">03</span> Specification<span class="rule"></span></p>
+
+    <div class="spec-groups">
+      <div class="spec-row"><div class="spec-key"><span class="idx">§01</span>Languages</div><div class="spec-vals"><span class="tag">Swift</span><span class="tag">UIKit</span><span class="tag">SwiftUI</span><span class="tag">TypeScript</span><span class="tag">Objective-C</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§02</span>Architecture</div><div class="spec-vals"><span class="tag">MVC</span><span class="tag">MVVM</span><span class="tag">Clean Architecture</span><span class="tag">SOLID</span><span class="tag">Delegate / Observer</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§03</span>Networking</div><div class="spec-vals"><span class="tag">RESTful APIs</span><span class="tag">Moya</span><span class="tag">Alamofire</span><span class="tag">JSON Modeling</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§04</span>Payments</div><div class="spec-vals"><span class="tag">Stripe</span><span class="tag">PayPal</span><span class="tag">Apple In-App Purchase</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§05</span>Real-Time</div><div class="spec-vals"><span class="tag">SignalR</span><span class="tag">OpenTok</span><span class="tag">CallKit</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§06</span>Data &amp; Storage</div><div class="spec-vals"><span class="tag">SQLite3</span><span class="tag">Core Data</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§07</span>Testing</div><div class="spec-vals"><span class="tag">XCTest</span><span class="tag">Unit Testing</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§08</span>CI / Release</div><div class="spec-vals"><span class="tag">Fastlane</span><span class="tag">GitHub Actions</span><span class="tag">GitHub</span><span class="tag">White-label Automation</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§09</span>AI-Assisted</div><div class="spec-vals"><span class="tag">Claude Code</span><span class="tag">Claude Skills</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§10</span>Tools &amp; Platforms</div><div class="spec-vals"><span class="tag">SPM</span><span class="tag">CocoaPods</span><span class="tag">Firebase</span><span class="tag">Amplitude</span><span class="tag">App Store Connect</span><span class="tag">Jira</span><span class="tag">Social Logins</span><span class="tag">Localization</span></div></div>
+      <div class="spec-row"><div class="spec-key"><span class="idx">§11</span>Practices</div><div class="spec-vals"><span class="tag">Sprint Planning</span><span class="tag">Retrospectives</span><span class="tag">Code / PR Reviews</span></div></div>
+    </div>
+  </section>
+
+  <section id="notes" class="reveal">
+    <p class="sheet-label"><span class="num">04</span> Notes<span class="rule"></span></p>
+    <div class="notes-grid">
+      <div class="note-card">
+        <div class="note-num">Note 1</div>
+        <div class="note-title">Education</div>
+        <div class="note-body">BS, Computational Science<br><span class="dim">Bahria University · Aug 2015 – Jun 2019</span></div>
+      </div>
+      <div class="note-card">
+        <div class="note-num">Note 2</div>
+        <div class="note-title">Languages</div>
+        <div class="note-body">Urdu <span class="dim">(native)</span><br>English <span class="dim">(working)</span><br>German <span class="dim">(A1, elementary)</span></div>
+      </div>
+      <div class="note-card">
+        <div class="note-num">Note 3</div>
+        <div class="note-title">Certifications</div>
+        <div class="note-body">Deutsch Kurs A1<br><span class="dim">German Language, A1 Level</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approval" class="reveal">
+    <p class="sheet-label"><span class="num">05</span> Approval<span class="rule"></span></p>
+    <div class="approval-grid">
+      <div>
+        <h2 class="approval-heading">Let's build something reliable.</h2>
+        <p class="approval-sub">Based in Karachi, Pakistan — open to conversations about iOS engineering, team leadership, and mobile architecture.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:rayhaanalykhan@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/rayhaanalykhan/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://stackoverflow.com/users/10124991/rehan-ali-khan" target="_blank" rel="noopener">Stack Overflow</a>
+          <a class="btn" href="https://github.com/rayhaanalykhan" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="assets/Rehan-Ali-Khan-iOS-Developer-CV.pdf" download>↓ CV (PDF)</a>
         </div>
       </div>
-    </section>
-
-    <section id="contact">
-      <p class="comment-label"><span class="slashes">//</span> Contact.md</p>
-      <h2 class="contact-heading">Let's build something reliable.</h2>
-      <p class="contact-sub">Based in Karachi, Pakistan — open to conversations about iOS engineering, team leadership, and mobile architecture.</p>
-      <div class="cta-row">
-        <a class="btn primary" href="mailto:rayhaanalykhan@gmail.com">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/rayhaanalykhan/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://stackoverflow.com/users/10124991/rehan-ali-khan" target="_blank" rel="noopener">Stack Overflow</a>
-        <a class="btn" href="https://github.com/rayhaanalykhan" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="assets/Rehan-Ali-Khan-iOS-Developer-CV.pdf" download>↓ CV (PDF)</a>
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 160 160">
+          <circle class="stamp-ring" cx="80" cy="80" r="70"/>
+          <circle class="stamp-ring-inner" cx="80" cy="80" r="60"/>
+          <path id="stampArcTop" d="M 80,20 A 60,60 0 0 1 140,80" fill="none"/>
+          <path id="stampArcBottom" d="M 20,80 A 60,60 0 0 1 80,140" fill="none"/>
+          <text class="stamp-text"><textPath href="#stampArcTop" startOffset="2">OPEN TO OPPORTUNITIES</textPath></text>
+          <text class="stamp-text"><textPath href="#stampArcBottom" startOffset="2">KARACHI · REMOTE OK</textPath></text>
+          <text class="stamp-center" x="80" y="88">✓</text>
+        </svg>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <span>© <span id="year"></span> Rehan Ali Khan</span>
-      <span class="spacer"></span>
-      <a href="https://github.com/rayhaanalykhan/rayhaanalykhan.github.io" target="_blank" rel="noopener">view source</a>
-    </footer>
+</main>
 
-  </main>
-</div>
+<footer>
+  <span>© <span id="year"></span> Rehan Ali Khan</span>
+  <span class="spacer"></span>
+  <a href="https://github.com/rayhaanalykhan/rayhaanalykhan.github.io" target="_blank" rel="noopener">view source</a>
+</footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
-  var toggle = document.getElementById('navToggle');
-  var sidebar = document.getElementById('sidebar');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var open = sidebar.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    sidebar.querySelectorAll('.navlink').forEach(function (link) {
-      link.addEventListener('click', function () {
-        sidebar.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+  // ---------- Theme: default to system, allow manual override, persist ----------
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+  var STORE_KEY = 'theme';
+
+  function systemPrefersDark(){
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function effectiveTheme(){
+    var stored = localStorage.getItem(STORE_KEY);
+    if (stored === 'dark' || stored === 'light') return stored;
+    return systemPrefersDark() ? 'dark' : 'light';
+  }
+  function applyToggleVisual(theme){
+    toggle.setAttribute('data-mode', theme);
+  }
+  function setTheme(theme, persist){
+    if (persist) {
+      localStorage.setItem(STORE_KEY, theme);
+      root.setAttribute('data-theme', theme);
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    applyToggleVisual(theme);
+  }
+
+  try {
+    var stored = localStorage.getItem(STORE_KEY);
+    if (stored === 'dark' || stored === 'light') {
+      setTheme(stored, false);
+      root.setAttribute('data-theme', stored);
+    } else {
+      applyToggleVisual(effectiveTheme());
+    }
+  } catch (e) { applyToggleVisual(systemPrefersDark() ? 'dark' : 'light'); }
+
+  toggle.addEventListener('click', function(){
+    var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+    setTheme(next, true);
+  });
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+      var stored = localStorage.getItem(STORE_KEY);
+      if (stored === 'dark' || stored === 'light') return;
+      applyToggleVisual(e.matches ? 'dark' : 'light');
     });
   }
 
-  // Scroll-spy active nav highlighting
-  var links = Array.prototype.slice.call(document.querySelectorAll('.navlink'));
+  // ---------- Scroll-spy ----------
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sheet-tab'));
   var sections = links.map(function (l) { return document.getElementById(l.dataset.target); });
   var spy = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -560,39 +707,17 @@
   }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
   sections.forEach(function (s) { if (s) spy.observe(s); });
 
-  // Hero typing effect
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var lines = [
-    { el: document.getElementById('typeName'), text: 'Rehan Ali Khan' },
-    { el: document.getElementById('typeTitle'), text: 'Senior iOS Developer — Mobile Team Lead' },
-    { el: document.getElementById('typeLoc'), text: 'Karachi, Pakistan' }
-  ];
-
-  if (reduceMotion) {
-    lines.forEach(function (l) { l.el.textContent = l.text; });
-  } else {
-    var li = 0;
-    function typeLine() {
-      if (li >= lines.length) return;
-      var target = lines[li];
-      var ci = 0;
-      var cursor = document.createElement('span');
-      cursor.className = 'typecursor';
-      target.el.appendChild(cursor);
-      var iv = setInterval(function () {
-        if (ci < target.text.length) {
-          cursor.insertAdjacentText('beforebegin', target.text[ci]);
-          ci++;
-        } else {
-          clearInterval(iv);
-          cursor.remove();
-          li++;
-          setTimeout(typeLine, 120);
-        }
-      }, 22);
-    }
-    typeLine();
-  }
+  // ---------- Scroll reveal ----------
+  var revealTargets = document.querySelectorAll('.reveal');
+  var reveal = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealTargets.forEach(function (t) { reveal.observe(t); });
 </script>
 
 </body>
